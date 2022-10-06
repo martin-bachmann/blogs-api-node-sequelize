@@ -12,7 +12,14 @@ const getByEmail = async (email) => {
   return user;
 };
 
+const createUser = async (user) => {
+  const newUser = await User.create({ ...user });
+
+  return newUser;
+};
+
 module.exports = {
   getById,
   getByEmail,
+  createUser,
 };
