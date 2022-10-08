@@ -44,4 +44,13 @@ const postSchema = Joi.object({
   }),
 });
 
-module.exports = { loginSchema, userSchema, categorySchema, postSchema };
+const updatePostSchema = Joi.object({
+  title: Joi.string().required().messages({
+    'string.empty': FIELDS_MISSING_ERROR,
+  }),
+  content: Joi.string().required().messages({
+    'string.empty': FIELDS_MISSING_ERROR,
+  }),
+});
+
+module.exports = { loginSchema, userSchema, categorySchema, postSchema, updatePostSchema };
