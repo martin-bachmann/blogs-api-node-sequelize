@@ -6,6 +6,8 @@ const updatePostMiddeware = require('../middlewares/updatePost.middleware');
 
 const router = express.Router();
 
+router.get('/search', validateJWT, postController.getByQuery);
+
 router.post('/', validateJWT, postMiddleware, postController.createPost);
 
 router.get('/', validateJWT, postController.getAllPosts);
